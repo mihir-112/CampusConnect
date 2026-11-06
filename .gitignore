@@ -1,0 +1,29 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local data and secrets
+instance/
+*.db
+.env
+
+# Node
+node_modules/
+frontend/dist/
+
+# Editors
+.vscode/
+.idea/
+
+# Build and test artifacts
+dist/
+coverage/
+.vite/
+*.log
+
+# Python test/cache artifacts
+.coverage
+htmlcov/
