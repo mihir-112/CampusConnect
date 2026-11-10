@@ -33,5 +33,5 @@ Fill this in from your real GitHub history. Leave a row empty rather than invent
 
 | Commit or PR | What it contains | Link |
 |---|---|---|
-| | | |
-| | | |
+| PR #2 | Add Student Dashboard and Frontend Interface | https://github.com/mihir-112/CampusConnect/pull/2 |
+| Commit d9c3957 | Add Moksh's student dashboard and frontend interface | https://github.com/mihir-112/CampusConnect/commit/d9c3957 |
