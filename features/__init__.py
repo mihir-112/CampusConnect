@@ -1,7 +1,8 @@
+
 """Feature packages loader. Owner: Antigravity.
 
-Maps Python package names with underscores (e.g., features.mihir_core_announcement_engine)
-to their corresponding feature folders (e.g., features/mihir-core-announcement-engine).
+Maps Python package names with underscores (e.g., features.core_announcement_engine)
+to their corresponding feature folders (e.g., features/core-announcement-engine).
 Supports both member-prefixed package names and legacy aliases for 100% compatibility.
 """
 import importlib.util
@@ -12,14 +13,14 @@ from importlib.abc import MetaPathFinder
 _features_dir = os.path.dirname(os.path.abspath(__file__))
 
 FEATURE_MAPPING = {
-    # Member-prefixed package names
-    "mihir_core_announcement_engine": "mihir-core-announcement-engine",
+    # Feature package names
+    "core_announcement_engine": "core-announcement-engine",
     "aariz_publisher_auth": "aariz-publisher-auth",
     "nayeem_notice_details": "nayeem-notice-details",
     "moksh_student_dashboard": "moksh-student-dashboard",
     "mridul_search_notifications": "mridul-search-notifications",
-    # Legacy aliases (backward compatibility)
-    "core_announcement_engine": "mihir-core-announcement-engine",
+
+    # Backward-compatible aliases
     "publisher_auth": "aariz-publisher-auth",
     "notice_details": "nayeem-notice-details",
     "student_dashboard": "moksh-student-dashboard",

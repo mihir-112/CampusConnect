@@ -14,7 +14,7 @@ Categories: **Examinations, Events, Clubs, General**.
 
 | Member | Feature Responsibility | Dedicated Feature Folder | Git Branch |
 |---|---|---|---|
-| **Mihir Sahoo** | Core Backend & Announcement Engine (CRUD, SQLite/SQLAlchemy, Lifecycle) | [`features/mihir-core-announcement-engine`](features/mihir-core-announcement-engine/) | `feature/core-announcement-engine` |
+| **Mihir Sahoo** | Core Backend & Announcement Engine (CRUD, SQLite/SQLAlchemy, Lifecycle) | [`features/core-announcement-engine`](features/core-announcement-engine/) | `feature/core-announcement-engine` |
 | **Aariz** | Publisher Authentication (JWT, Argon2, Throttling, Protected Routes) | [`features/aariz-publisher-auth`](features/aariz-publisher-auth/) | `feature/publisher-auth` |
 | **Nayeem** | Notice Details & Attachments (Magic Byte Validation, PDF/Posters, Event Data) | [`features/nayeem-notice-details`](features/nayeem-notice-details/) | `feature/notice-details` |
 | **Moksh** | Figma-Based Frontend & Student Dashboard (UI Components, Tailwind Tokens) | [`features/moksh-student-dashboard`](features/moksh-student-dashboard/) | `feature/student-dashboard` |
@@ -89,7 +89,7 @@ CampusConnect/
 ├── backend/app/                 # Core backend: main.py, database/, core/, shared/ (Mihir)
 ├── frontend/src/                # Single React client: app/, shared/, main.jsx (Moksh)
 ├── features/
-│   ├── mihir-core-announcement-engine/    # Mihir's backend, frontend, tests & docs
+│   ├── core-announcement-engine/    # Mihir's backend, frontend, tests & docs
 │   ├── aariz-publisher-auth/              # Aariz's backend, frontend, tests & docs
 │   ├── nayeem-notice-details/             # Nayeem's backend, frontend, tests & docs
 │   ├── moksh-student-dashboard/           # Moksh's backend, frontend, tests & docs

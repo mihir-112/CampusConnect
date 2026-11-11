@@ -56,7 +56,7 @@ CampusConnect/
 │
 ├── features/
 │   │
-│   ├── mihir-core-announcement-engine/
+│   ├── core-announcement-engine/
 │   │   ├── backend/
 │   │   │   ├── models/announcement.py       # Announcement SQLAlchemy model
 │   │   │   ├── routes/announcements.py      # CRUD REST API endpoints
@@ -150,7 +150,7 @@ CampusConnect/
 
 | Member | Feature Folder | Primary Responsibilities |
 |---|---|---|
-| **Mihir Sahoo** | `features/mihir-core-announcement-engine` | Overall backend architecture, SQLite/SQLAlchemy setup, announcement CRUD, draft/published lifecycle, publisher dashboard logic |
+| **Mihir Sahoo** | `features/core-announcement-engine` | Overall backend architecture, SQLite/SQLAlchemy setup, announcement CRUD, draft/published lifecycle, publisher dashboard logic |
 | **Aariz** | `features/aariz-publisher-auth` | Publisher authentication, JWT tokens, Argon2 password hashing, login brute-force throttle, protected routes |
 | **Nayeem** | `features/nayeem-notice-details` | Poster and PDF attachments, magic byte validation, PDF viewer/download endpoints, event metadata |
 | **Moksh** | `features/moksh-student-dashboard` | Figma visual implementation, student landing page, responsive layouts, Tailwind design tokens, card grid |

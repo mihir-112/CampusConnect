@@ -57,20 +57,18 @@ export default defineConfig({
 
   resolve: {
     alias: [
-      // Direct member-prefixed feature folders
-      { find: "@features/mihir-core-announcement-engine", replacement: path.join(repoRoot, "features/mihir-core-announcement-engine") },
+      // Direct feature folders
+      { find: "@features/core-announcement-engine", replacement: path.join(repoRoot, "features/core-announcement-engine") },
       { find: "@features/aariz-publisher-auth", replacement: path.join(repoRoot, "features/aariz-publisher-auth") },
       { find: "@features/nayeem-notice-details", replacement: path.join(repoRoot, "features/nayeem-notice-details") },
       { find: "@features/moksh-student-dashboard", replacement: path.join(repoRoot, "features/moksh-student-dashboard") },
       { find: "@features/mridul-search-notifications", replacement: path.join(repoRoot, "features/mridul-search-notifications") },
 
       // Legacy feature names (backward compatibility)
-      { find: "@features/core-announcement-engine", replacement: path.join(repoRoot, "features/mihir-core-announcement-engine") },
       { find: "@features/publisher-auth", replacement: path.join(repoRoot, "features/aariz-publisher-auth") },
       { find: "@features/notice-details", replacement: path.join(repoRoot, "features/nayeem-notice-details") },
       { find: "@features/student-dashboard", replacement: path.join(repoRoot, "features/moksh-student-dashboard") },
       { find: "@features/search-notifications", replacement: path.join(repoRoot, "features/mridul-search-notifications") },
-
       { find: "@features", replacement: path.join(repoRoot, "features") },
       { find: "@members", replacement: path.join(repoRoot, "features") },
 

@@ -2,8 +2,8 @@
 import { Route, Routes } from "react-router-dom";
 import ProtectedRoute from "@features/aariz-publisher-auth/frontend/components/ProtectedRoute";
 import LoginPage from "@features/aariz-publisher-auth/frontend/pages/LoginPage";
-import AnnouncementFormPage from "@features/mihir-core-announcement-engine/frontend/pages/AnnouncementFormPage";
-import PublisherDashboardPage from "@features/mihir-core-announcement-engine/frontend/pages/PublisherDashboardPage";
+import AnnouncementFormPage from "@features/core-announcement-engine/frontend/pages/AnnouncementFormPage";
+import PublisherDashboardPage from "@features/core-announcement-engine/frontend/pages/PublisherDashboardPage";
 import Layout from "@features/moksh-student-dashboard/frontend/components/Layout";
 import HomePage from "@features/moksh-student-dashboard/frontend/pages/HomePage";
 import NotFoundPage from "@features/moksh-student-dashboard/frontend/pages/NotFoundPage";
