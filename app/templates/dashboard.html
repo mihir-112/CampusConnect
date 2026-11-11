@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Announcements{% endblock %}
+{% block content %}
+<section class="page-head">
+  <h1>Campus announcements</h1>
+  <p class="lead">Exams, events, clubs and general notices, all in one place. No login needed.</p>
+  {% include "partials/_search_bar.html" %}
+</section>
+
+<nav class="category-nav" aria-label="Categories">
+  <a href="{{ url_for('dashboard.index', q=q or None) }}" class="{{ 'active' if not active_category else '' }}" {% if not active_category %}aria-current="page"{% endif %}>All</a>
+  {% for c in CATEGORIES %}
+    <a href="{{ url_for('dashboard.index', category=c, q=q or None) }}" class="{{ 'active' if active_category == c else '' }}" {% if active_category == c %}aria-current="page"{% endif %}>{{ c }}</a>
+  {% endfor %}
+</nav>
+
+{% if load_error %}
+  <div class="state state-error" role="alert">
+    <h2>We couldn't load announcements</h2>
+    <p>Something went wrong on our side. Refresh the page in a moment.</p>
+    <a class="btn btn-primary" href="{{ url_for('dashboard.index') }}">Try again</a>
+  </div>
+{% elif announcements %}
+  <p class="result-count">
+    {{ pagination.total }} announcement{{ '' if pagination.total == 1 else 's' }}
+    {% if active_category %}in {{ active_category }}{% endif %}
+    {% if q %}matching &ldquo;{{ q }}&rdquo;{% endif %}
+  </p>
+  <div class="card-grid">
+    {% for a in announcements %}{% include "partials/_announcement_card.html" %}{% endfor %}
+  </div>
+
+  {% if pagination.pages > 1 %}
+    <nav class="pager" aria-label="Pages">
+      {% if pagination.has_prev %}
+        <a class="btn btn-secondary" href="{{ url_for('dashboard.index', page=pagination.prev_num, q=q or None, category=active_category or None) }}">Newer</a>
+      {% endif %}
+      <span>Page {{ pagination.page }} of {{ pagination.pages }}</span>
+      {% if pagination.has_next %}
+        <a class="btn btn-secondary" href="{{ url_for('dashboard.index', page=pagination.next_num, q=q or None, category=active_category or None) }}">Older</a>
+      {% endif %}
+    </nav>
+  {% endif %}
+{% elif q or active_category %}
+  <div class="state">
+    <h2>No announcements found</h2>
+    <p>Nothing matches your search{% if active_category %} in {{ active_category }}{% endif %}. Try different words or clear the filters.</p>
+    <a class="btn btn-secondary" href="{{ url_for('dashboard.index') }}">Clear filters</a>
+  </div>
+{% else %}
+  <div class="state">
+    <h2>No announcements yet</h2>
+    <p>Nothing has been published so far. Check back soon.</p>
+  </div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,137 @@
+/* CampusConnect shared styles. Owner: Moksh.
+   Design tokens live here; every other CSS file only uses these variables. */
+:root {
+  --navy: #14233F;
+  --navy-soft: #2A3B5C;
+  --white: #FFFFFF;
+  --soft-blue: #E8EEF8;
+  --green: #16845B;
+  --green-dark: #0F6A48;
+  --green-tint: #E3F3EC;
+  --text: #22262E;
+  --text-muted: #566070;
+  --border: #D3DBE8;
+  --danger: #B3261E;
+  --danger-tint: #FBE9E7;
+  --radius: 6px;
+  --shadow: 0 1px 2px rgba(20, 35, 63, 0.08);
+  --font-body: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--white); color: var(--text);
+  font-family: var(--font-body); font-size: 1rem; line-height: 1.55;
+  min-height: 100vh; display: flex; flex-direction: column;
+}
+h1, h2, h3 { font-family: var(--font-heading); color: var(--navy); line-height: 1.25; margin: 0 0 .5rem; }
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.25rem; }
+a { color: var(--navy); }
+a:hover { color: var(--green-dark); }
+:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+.container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 1rem; }
+.main { flex: 1; padding-top: 1.75rem; padding-bottom: 3rem; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--white); padding: .5rem 1rem; z-index: 100; }
+.skip-link:focus { left: 0; }
+
+/* Header and navigation */
+.site-header { background: var(--navy); color: var(--white); border-bottom: 3px solid var(--green); }
+.header-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 64px; flex-wrap: wrap; }
+.brand { color: var(--white); text-decoration: none; display: flex; flex-direction: column; line-height: 1.15; padding: .5rem 0; }
+.brand:hover { color: var(--white); }
+.brand-name { font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; }
+.brand-tag { font-size: .8rem; color: #C5D1E8; }
+.site-nav { display: flex; align-items: center; gap: .25rem; }
+.site-nav > a, .nav-button {
+  color: var(--white); text-decoration: none; padding: .5rem .75rem; border-radius: var(--radius);
+  background: none; border: 0; font: inherit; cursor: pointer;
+}
+.site-nav > a:hover, .nav-button:hover { background: var(--navy-soft); color: var(--white); }
+.nav-toggle { display: none; background: none; border: 1px solid #4A5C80; color: var(--white); border-radius: var(--radius); padding: .4rem .55rem; cursor: pointer; }
+.inline-form { display: inline; margin: 0; }
+
+/* Flash messages */
+.flash-area { margin-top: 1rem; }
+.flash { margin: 0 0 .5rem; padding: .7rem 1rem; border-radius: var(--radius); border: 1px solid var(--border); background: var(--soft-blue); }
+.flash-success { background: var(--green-tint); border-color: #A9D8C3; color: #0B4F37; }
+.flash-error { background: var(--danger-tint); border-color: #EBB8B2; color: #7A1B15; }
+.flash ul { margin: .4rem 0 0; padding-left: 1.2rem; }
+
+/* Page header, search */
+.page-head { margin-bottom: 1.25rem; }
+.lead { color: var(--text-muted); margin: 0 0 1rem; max-width: 60ch; }
+.search-form { display: flex; gap: .5rem; max-width: 560px; }
+.search-form input { flex: 1; min-width: 0; }
+
+/* Category navigation */
+.category-nav { display: flex; gap: .25rem; flex-wrap: wrap; border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; }
+.category-nav a { padding: .6rem 1rem; text-decoration: none; color: var(--text-muted); border-bottom: 3px solid transparent; margin-bottom: -1px; }
+.category-nav a:hover { color: var(--navy); background: var(--soft-blue); }
+.category-nav a.active { color: var(--navy); border-bottom-color: var(--green); font-weight: 600; }
+.result-count { color: var(--text-muted); margin: 0 0 1rem; }
+
+/* Announcement cards */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1rem 1.1rem; display: flex; flex-direction: column; }
+.card-meta { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; font-size: .85rem; color: var(--text-muted); margin-bottom: .6rem; }
+.card-title { font-size: 1.1rem; margin-bottom: .4rem; }
+.card-title a { text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-summary { margin: 0 0 1rem; color: var(--text); flex: 1; overflow-wrap: anywhere; }
+.card-foot { display: flex; justify-content: space-between; align-items: center; gap: .5rem; flex-wrap: wrap; font-size: .85rem; }
+.card-tags { display: flex; gap: .5rem; color: var(--text-muted); flex-wrap: wrap; }
+.card-link { font-weight: 600; }
+
+/* Category chips: text and background pairs all pass 4.5:1 contrast */
+.chip { display: inline-block; padding: .1rem .6rem; border-radius: 999px; font-size: .8rem; font-weight: 600; background: var(--soft-blue); color: var(--navy); }
+.cat-examinations { background: var(--soft-blue); color: var(--navy); }
+.cat-events { background: var(--green-tint); color: #0B4F37; }
+.cat-clubs { background: #EFE9F7; color: #4A2F7A; }
+.cat-general { background: #ECEFF3; color: #353F4D; }
+
+/* Buttons and form controls */
+.btn { display: inline-block; padding: .55rem 1.1rem; border-radius: var(--radius); border: 1px solid transparent; font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; text-align: center; }
+.btn-primary { background: var(--green); color: var(--white); }
+.btn-primary:hover { background: var(--green-dark); color: var(--white); }
+.btn-secondary { background: var(--white); color: var(--navy); border-color: var(--navy); }
+.btn-secondary:hover { background: var(--soft-blue); color: var(--navy); }
+.btn-danger { background: var(--white); color: var(--danger); border-color: var(--danger); }
+.btn-danger:hover { background: var(--danger-tint); color: var(--danger); }
+.btn-small { padding: .3rem .7rem; font-size: .875rem; }
+.btn-block { width: 100%; }
+.btn[disabled] { opacity: .65; cursor: progress; }
+input[type="text"], input[type="search"], input[type="password"], input[type="date"], input[type="time"], select, textarea, input[type="file"] {
+  width: 100%; padding: .55rem .7rem; border: 1px solid #8A97AD; border-radius: var(--radius); font: inherit; background: var(--white); color: var(--text);
+}
+textarea { resize: vertical; }
+.form-row { margin-bottom: 1rem; }
+.form-row label { display: block; font-weight: 600; margin-bottom: .3rem; }
+.hint { color: var(--text-muted); font-size: .875rem; margin: .3rem 0 0; }
+.field-error { color: var(--danger); font-size: .875rem; margin: .3rem 0 0; }
+
+/* Empty / error states */
+.state { background: var(--soft-blue); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.25rem; text-align: center; max-width: 640px; margin: 1.5rem auto; }
+.state p { color: var(--text-muted); margin: 0 0 1rem; }
+.state-error { background: var(--danger-tint); border-color: #EBB8B2; }
+.error-code { font-weight: 600; margin-bottom: .25rem !important; }
+
+.pager { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+.site-footer { border-top: 1px solid var(--border); background: var(--soft-blue); padding: 1rem 0; font-size: .875rem; color: var(--text-muted); }
+
+/* Responsive */
+@media (max-width: 900px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) {
+  h1 { font-size: 1.5rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .nav-toggle { display: inline-flex; }
+  .site-nav { display: none; flex-direction: column; align-items: stretch; width: 100%; padding-bottom: .75rem; }
+  .site-nav.open { display: flex; }
+  .search-form { flex-direction: column; }
+  .category-nav { flex-wrap: nowrap; overflow-x: auto; }
+  .category-nav a { white-space: nowrap; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }

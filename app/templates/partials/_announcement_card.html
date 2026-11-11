@@ -1,0 +1,16 @@
+<article class="card">
+  <div class="card-meta">
+    <span class="chip {{ a.category|cat_class }}">{{ a.category }}</span>
+    <time datetime="{{ a.published_at.date().isoformat() if a.published_at else '' }}">{{ a.published_at|date_fmt }}</time>
+  </div>
+  <h2 class="card-title"><a href="{{ url_for('notices.detail', announcement_id=a.id) }}">{{ a.title }}</a></h2>
+  <p class="card-summary">{{ a.description|truncate(150, True) }}</p>
+  <div class="card-foot">
+    <span class="card-tags">
+      {% if a.event_date %}<span>Event: {{ a.event_date|date_fmt }}</span>{% endif %}
+      {% if a.get_attachment('poster') %}<span>Poster</span>{% endif %}
+      {% if a.get_attachment('pdf') %}<span>PDF</span>{% endif %}
+    </span>
+    <a class="card-link" href="{{ url_for('notices.detail', announcement_id=a.id) }}">Read notice</a>
+  </div>
+</article>

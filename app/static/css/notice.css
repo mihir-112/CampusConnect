@@ -1,0 +1,13 @@
+/* Notice detail page. Owner: Nayeem. */
+.back { margin: 0 0 1rem; font-size: .9rem; }
+.notice { max-width: 760px; }
+.notice-head h1 { font-size: 2rem; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: .75rem; margin: 1rem 0; padding: 1rem; background: var(--soft-blue); border-radius: var(--radius); }
+.facts div { margin: 0; }
+.facts dt { font-size: .8rem; color: var(--text-muted); }
+.facts dd { margin: 0; font-weight: 600; color: var(--navy); }
+.notice-body { white-space: pre-line; overflow-wrap: anywhere; margin: 1.25rem 0; max-width: 70ch; }
+.attachment { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.poster { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+.file-name { color: var(--text-muted); margin: 0 0 .75rem; }
+.state-inline { background: var(--soft-blue); padding: .75rem 1rem; border-radius: var(--radius); color: var(--text-muted); }

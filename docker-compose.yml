@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      SECRET_KEY: ${SECRET_KEY:-change-this-secret-before-real-use}
+      DATABASE_URL: sqlite:////app/instance/campusconnect.db
+      UPLOAD_FOLDER: /app/instance/uploads
+    volumes:
+      - campusconnect_data:/app/instance
+    restart: unless-stopped
+
+volumes:
+  campusconnect_data:

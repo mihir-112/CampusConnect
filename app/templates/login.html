@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Publisher login{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">{% endblock %}
+{% block content %}
+<section class="auth-card">
+  <h1>Publisher login</h1>
+  <p class="hint">For authorised staff only. Students can read announcements without logging in.</p>
+  <form method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="form-row">
+      {{ form.username.label }}
+      {{ form.username(autocomplete="username", autofocus=true) }}
+      {% for e in form.username.errors %}<p class="field-error">{{ e }}</p>{% endfor %}
+    </div>
+    <div class="form-row">
+      {{ form.password.label }}
+      {{ form.password(autocomplete="current-password") }}
+      {% for e in form.password.errors %}<p class="field-error">{{ e }}</p>{% endfor %}
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Log in</button>
+  </form>
+</section>
+{% endblock %}

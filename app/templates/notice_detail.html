@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}{{ announcement.title }}{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/notice.css') }}">{% endblock %}
+{% block content %}
+<p class="back"><a href="{{ url_for('dashboard.index', category=announcement.category) }}">Back to {{ announcement.category }}</a></p>
+
+<article class="notice">
+  <header class="notice-head">
+    <div class="card-meta">
+      <span class="chip {{ announcement.category|cat_class }}">{{ announcement.category }}</span>
+      <span>Published {{ announcement.published_at|date_fmt }}</span>
+    </div>
+    <h1>{{ announcement.title }}</h1>
+  </header>
+
+  {% if announcement.event_date or announcement.event_time or announcement.venue %}
+  <dl class="facts">
+    {% if announcement.event_date %}<div><dt>Date</dt><dd>{{ announcement.event_date|date_fmt }}</dd></div>{% endif %}
+    {% if announcement.event_time %}<div><dt>Time</dt><dd>{{ announcement.event_time|time_fmt }}</dd></div>{% endif %}
+    {% if announcement.venue %}<div><dt>Venue</dt><dd>{{ announcement.venue }}</dd></div>{% endif %}
+  </dl>
+  {% endif %}
+
+  <div class="notice-body">{{ announcement.description }}</div>
+
+  {% if announcement.registration_link %}
+    <p><a class="btn btn-primary" href="{{ announcement.registration_link }}" target="_blank" rel="noopener noreferrer">Register for this event</a></p>
+  {% endif %}
+
+  {% if attachments.poster %}
+    <section class="attachment">
+      <h2>Poster</h2>
+      {% if attachments.poster.available %}
+        <img class="poster" src="{{ url_for('notices.poster', announcement_id=announcement.id) }}" alt="Poster for {{ announcement.title }}">
+      {% else %}
+        <p class="state-inline">The poster is currently unavailable. Please contact the publisher.</p>
+      {% endif %}
+    </section>
+  {% endif %}
+
+  {% if attachments.pdf %}
+    <section class="attachment">
+      <h2>PDF notice</h2>
+      {% if attachments.pdf.available %}
+        <p class="file-name">{{ attachments.pdf.record.original_filename }} ({{ (attachments.pdf.record.size_bytes / 1024)|round|int }} KB)</p>
+        <p>
+          <a class="btn btn-secondary" href="{{ url_for('notices.pdf', announcement_id=announcement.id) }}" target="_blank" rel="noopener">View PDF</a>
+          <a class="btn btn-secondary" href="{{ url_for('notices.pdf', announcement_id=announcement.id, download=1) }}">Download PDF</a>
+        </p>
+      {% else %}
+        <p class="state-inline">The PDF is currently unavailable. Please contact the publisher.</p>
+      {% endif %}
+    </section>
+  {% endif %}
+</article>
+{% endblock %}
