@@ -1,0 +1,142 @@
+/* Notice detail page and attachments. Owner: notice-details.
+   Theme: Light Blue (#EAF4FF) + Sky Blue (#D6ECFF/#C5E3FF) + Indigo (#373B80/#252858) + Lavender (#8585E8/#F0EEFF)
+   All text on light surfaces: Black (#000000)
+*/
+
+.back {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+}
+.back a {
+  color: var(--indigo-primary);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+.back a:hover {
+  color: var(--indigo-dark);
+}
+
+/* Announcement Main Content Card: Sky Blue #D6ECFF */
+.notice {
+  max-width: 840px;
+  background: var(--card-bg); /* #D6ECFF */
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  color: #000000;
+}
+
+.notice-head h1 {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: #000000;
+  margin-top: 0.5rem;
+  line-height: 1.2;
+}
+
+/* Facts Box (Event date, time, venue, registration): Alternate Sky Blue #C5E3FF */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--card-bg-alt); /* #C5E3FF */
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.facts div {
+  margin: 0;
+}
+
+.facts dt {
+  font-size: 0.825rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.facts dd {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #000000;
+}
+
+.facts dd a {
+  color: var(--indigo-primary);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.notice-body {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  margin: 1.75rem 0;
+  max-width: 72ch;
+  color: #000000;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* Attachments Section */
+.attachment {
+  margin-top: 2.25rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border);
+}
+
+.attachment h3 {
+  color: #000000;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.attachment-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.85rem;
+}
+
+.poster {
+  max-width: 100%;
+  height: auto;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  display: block;
+}
+
+.pdf-frame {
+  width: 100%;
+  height: 70vh;
+  min-height: 420px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  margin-top: 1rem;
+  background: #ffffff;
+}
+
+.file-name {
+  color: #000000;
+  font-weight: 600;
+  margin: 0 0 0.85rem;
+  font-size: 0.95rem;
+}
+
+.state-inline {
+  background: var(--card-bg-alt);
+  padding: 0.85rem 1.15rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  color: #000000;
+  font-weight: 500;
+}
