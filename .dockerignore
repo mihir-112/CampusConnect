@@ -1,0 +1,16 @@
+.git
+.github
+.env
+venv
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+instance
+*.db
+node_modules
+frontend/node_modules
+frontend/dist
+members/*/evidence
+features/*/evidence
+docs

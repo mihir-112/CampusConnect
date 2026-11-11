@@ -1,0 +1,49 @@
+/* Design tokens. Owner: student-dashboard.
+   Theme: Light Blue (#EAF4FF) + Sky Blue (#D6ECFF/#C5E3FF) + Indigo (#373B80/#252858) + Lavender (#8585E8/#F0EEFF)
+   All text on light surfaces: Black (#000000)
+*/
+:root {
+  /* Requested Color Palette */
+  --bg-page: #eaf4ff;            /* Main page background: light blue */
+  --card-bg: #d6ecff;            /* Announcement cards: sky blue */
+  --card-bg-alt: #c5e3ff;        /* Alternate cards: deeper sky blue */
+  --indigo-primary: #373b80;     /* Primary buttons & accents: indigo */
+  --indigo-dark: #252858;        /* Sidebar & dark navigation / footer: deep indigo */
+  --indigo-hover: #1f224b;       /* Indigo hover */
+  --lavender: #8585e8;           /* Accent colour: lavender */
+  --lavender-light: #f0eeff;     /* Light accent background: light lavender */
+  --lavender-hover: #7272d9;     /* Lavender hover */
+
+  --text-main: #000000;          /* All text on light surfaces: black */
+  --text-muted: #2d3748;         /* Supporting metadata text: dark slate/black */
+  --text-white: #ffffff;         /* Text on dark (deep indigo) surfaces: white */
+
+  --border: #b8d5ef;             /* Subtle blue-grey borders */
+  --border-focus: #373b80;       /* Indigo focus border */
+  --border-subtle: #cde2f5;
+
+  --danger: #b3261e;
+  --danger-tint: #fde8e8;
+  --success: #16845b;
+  --success-tint: #e3f3ec;
+
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 3px rgba(37, 40, 88, 0.06);
+  --shadow-md: 0 4px 14px rgba(37, 40, 88, 0.1);
+
+  --font-body: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Aliases for backwards-compatibility with existing component selectors */
+  --navy: var(--indigo-primary);
+  --navy-soft: var(--indigo-dark);
+  --white: #ffffff;
+  --soft-blue: var(--card-bg);
+  --green: var(--indigo-primary);
+  --green-dark: var(--indigo-hover);
+  --green-tint: var(--lavender-light);
+  --text: var(--text-main);
+  --shadow: var(--shadow-sm);
+}

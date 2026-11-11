@@ -1,0 +1,27 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local data and secrets
+instance/
+*.db
+.env
+
+# Node
+node_modules/
+frontend/dist/
+
+# Editors
+.vscode/
+.idea/
+
+# Generated files
+**/__pycache__/
+**/*.pyc
+
+# Frontend dependencies and builds
+**/node_modules/
+**/dist/
