@@ -1,0 +1,264 @@
+/* Search box, notification bell and list. Owner: search-notifications.
+   Theme: Light Blue (#EAF4FF) + Sky Blue (#D6ECFF/#C5E3FF) + Indigo (#373B80/#252858) + Lavender (#8585E8/#F0EEFF)
+   All text on light surfaces: Black (#000000)
+*/
+
+/* Search Form */
+.search-form {
+  display: flex;
+  align-items: center;
+  max-width: 620px;
+}
+
+.search-form input[type="search"] {
+  flex: 1;
+  min-width: 0;
+  background: var(--white);
+  color: #000000;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-pill);
+  padding: 0 5.4rem 0 2.45rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.search-form input[type="search"]::placeholder {
+  color: #4a5568;
+}
+
+.search-form input[type="search"]:focus {
+  border-color: var(--indigo-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(55, 59, 128, 0.12);
+}
+
+.search-form .search-btn,
+.search-form .btn-primary {
+  background: var(--indigo-primary);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.8rem;
+  height: 32px;
+  padding: 0 0.95rem;
+}
+.search-form .search-btn:hover,
+.search-form .btn-primary:hover {
+  background: var(--indigo-dark);
+}
+
+/* Notification Bell */
+.bell {
+  position: relative;
+}
+
+.bell-button {
+  position: relative;
+  background: transparent;
+  border: 0;
+  color: var(--text-white);
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.bell-button:hover {
+  background: var(--indigo-primary);
+}
+
+/* Lavender notification badge with black text */
+.bell-count {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.35rem;
+  border-radius: var(--radius-pill);
+  background: var(--lavender); /* Lavender #8585E8 */
+  color: #000000;              /* Black text */
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1.25rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Notification Panel Surface: Light Lavender #F0EEFF */
+.bell-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.65rem);
+  width: 360px;
+  max-width: calc(100vw - 2rem);
+  background: var(--lavender-light); /* Light lavender #F0EEFF */
+  color: #000000;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 24px rgba(37, 40, 88, 0.18);
+  z-index: 60;
+  overflow: hidden;
+}
+
+.bell-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.1rem;
+  background: #e2ddfe;
+  border-bottom: 1.5px solid var(--border);
+  color: #000000;
+}
+
+.bell-head strong {
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.link-button {
+  background: none;
+  border: 0;
+  color: var(--indigo-primary);
+  text-decoration: underline;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+}
+.link-button:hover {
+  color: var(--indigo-dark);
+}
+
+.bell-list, .notif-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bell-list {
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.bell-list li, .notif-list li {
+  border-bottom: 1px solid var(--border);
+}
+.bell-list li:last-child {
+  border-bottom: 0;
+}
+
+.bell-list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: #000000;
+  padding: 0.85rem 1.1rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.bell-list button:hover, .notif-list a:hover {
+  background: var(--card-bg); /* Sky blue hover */
+}
+
+/* Unread notification highlight: subtle lavender indicator with sky-blue background */
+.bell-list li.unread button, .notif-list li.unread a {
+  border-left: 4px solid var(--lavender);
+  background: var(--card-bg); /* Sky blue #D6ECFF */
+  font-weight: 700;
+  color: #000000;
+}
+
+.bell-time {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.bell-empty {
+  padding: 1.5rem 1.1rem;
+  margin: 0;
+  color: #000000;
+  font-weight: 500;
+  text-align: center;
+}
+
+.bell-foot {
+  padding: 0.75rem 1.1rem;
+  background: #e2ddfe;
+  border-top: 1.5px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.bell-foot a {
+  color: var(--indigo-primary);
+  font-weight: 700;
+  text-decoration: underline;
+}
+.bell-foot a:hover {
+  color: var(--indigo-dark);
+}
+
+/* Notifications Page */
+.notif-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.notif-head h1 {
+  color: #000000;
+  font-weight: 800;
+}
+
+.notif-list {
+  background: var(--lavender-light);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.notif-list a {
+  display: block;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .search-form {
+    flex-direction: column;
+  }
+  .bell-panel {
+    position: static;
+    width: 100%;
+    max-width: none;
+    margin-top: 0.75rem;
+  }
+  .bell-button {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .bell-count {
+    top: 0.35rem;
+    left: 2rem;
+    right: auto;
+  }
+}
