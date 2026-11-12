@@ -1,0 +1,35 @@
+/* Login page. Owner: publisher-auth.
+   Theme: Light Blue (#EAF4FF) + Sky Blue (#D6ECFF/#C5E3FF) + Indigo (#373B80/#252858) + Lavender (#8585E8/#F0EEFF)
+   All text on light surfaces: Black (#000000)
+*/
+
+.auth-card {
+  max-width: 440px;
+  margin: 2.5rem auto;
+  padding: 2.25rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  /* #D6ECFF */
+  box-shadow: var(--shadow-md);
+  color: #000000;
+}
+
+.auth-card h1 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.auth-card .hint {
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-align: center;
+}
+
+.auth-card .btn-primary {
+  margin-top: 0.5rem;
+}
